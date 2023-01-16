@@ -30,3 +30,6 @@ class FormData(models.Model):
     plan = models.OneToOneField(Plan, on_delete=models.CASCADE)
     addons = models.ForeignKey(Addon, on_delete=models.CASCADE)
     total = models.FloatField()
+
+    class Meta:
+        verbose_name_plural = 'Form Input Data'
