@@ -1,7 +1,11 @@
 from django.urls import path
 
-from .views import *
+from api import views
+from rest_framework.routers import DefaultRouter
 
-urlpatterns = [
-    path('', basic_view)
-]
+router = DefaultRouter()
+
+router.register('plan', views.Plan, basename='plan')
+router.register('addon', views.Addon, basename='addon')
+
+urlpatterns = router.urls
